@@ -35,3 +35,10 @@
 <!-- End of Genomic Region Search configuration -->
 
 <definition name="friendlyMineLinkDisplayer.tile" path="/model/friendlyMineLinkDisplayer.jsp" controllerUrl="/initFriendlyMineLinkDisplayer.do"/>
+
+<definition name="blast.page" extends="layout.template">
+	<put name="body" value="blast.tile"/>
+	<put name="pageName" value="blast"/>
+</definition>
+
+<definition name="blast.tile" path="http://www.locustmine.org/viroblast/viroblast.php"/>

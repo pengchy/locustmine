@@ -21,4 +21,6 @@
     <tile-name>model/proteins.jsp</tile-name>
     <aspect-source name="UniProt" url="http://www.uniprot.org"/>
   </aspect>
+	<aspect name="Interactions">
+	</aspect>
 </aspects>
