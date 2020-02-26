@@ -60,11 +60,9 @@
 			<fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
 			<fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
 		</fields>
-		<!--
 		<bagdisplayers>
 			<displayer src="heatMap.tile" showOnLeft="true" />
 		</bagdisplayers>
-		-->
 	</class>
 
  <class className="org.intermine.model.bio.Location">
@@ -222,8 +220,9 @@
 		<fields>
 			<fieldconfig fieldExpr="sample.primaryIdentifier" label="Sample"/>
 			<fieldconfig fieldExpr="expressionScore"/>
-			<fieldconfig fieldExpr="sample.dataSets.name" label="DataSet"/>
 			<fieldconfig fieldExpr="gene.primaryIdentifier" label="Gene"/>
+			<fieldconfig fieldExpr="tissue" label="Tissue"/>
+			<fieldconfig fieldExpr="developmentalStage" label="Developmental Stage"/>
 		</fields>
 	</class>
 	
@@ -245,6 +244,14 @@
 		</fields>
 	</class>
 	
+	<class className="org.intermine.model.bio.Homologue">
+		<fields>
+			<fieldconfig fieldExpr="gene.primaryIdentifier" showInResults="true" showInInlineCollection="false" />
+			<fieldconfig fieldExpr="homologue.primaryIdentifier"/>
+			<fieldconfig fieldExpr="homologue.organism.shortName"/>
+		</fields>
+	</class>
+	
 	<class className="org.intermine.model.bio.OrthGroup">
 		<fields>
 			<fieldconfig fieldExpr="identifier"/>
@@ -261,13 +268,13 @@
 		<reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
 		                  jspName="model/cytoscapeNetworkDisplayer.jsp"
 											replacesFields="interactions"
-											placement="Interactions"
+											placement="Genomics"
 											types="Gene,Protein"/>
 
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneStructureDisplayer"
                      jspName="model/geneStructureDisplayer.jsp"
                      replacesFields="transcripts,exons,CDSs,introns,UTRs,fivePrimeUTR,threePrimeUTR"
-                     placement="Genomics"
+                     placement="Genes"
                      types="Gene,Transcript,Exon,Intron,UTR,CDS"/>
 
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
@@ -285,7 +292,7 @@
    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneOntologyDisplayer"
                      jspName="model/geneOntologyDisplayer.jsp"
                      replacesFields="goAnnotation,ontologyAnnotations"
-                     placement="Genomics"
+                     placement="Function"
                      types="Gene"/>
 
 
@@ -359,7 +366,7 @@
 						typeClass="Gene"
 						views="symbol, organism.name, pathways.identifier, pathways.name"
 						externalLink="http://www.genome.jp/kegg-bin/show_pathway?map=map"/>
-						
+	<!--					
 	<enrichmentwidgetdisplayer id="geneSets_enrichment"
 	          title="Gene Sets Enrichment"
 						description="Gene Sets enriched for genes in this list - data from manually collected gene sets"
@@ -371,6 +378,7 @@
 						constraints="organism.taxonId=[list], primaryIdentifier != null"
 						typeClass="Gene"
 						views="symbol, organism.name, geneSets.identifier, geneSets.name"/>
+						-->
 						
 	<bagtabledisplayer id="orthologues" title="Orthologues" pathStrings="Gene.homologues.homologue.organism"
 	          description="Counts of genes in list with orthologues."

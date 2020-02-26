@@ -89,9 +89,9 @@
   </tag>
   <tag name="im:aspect:Genomics" objectIdentifier="Chromosome.transcripts" type="collection">
   </tag>
-  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.GOTerm" type="class">
+  <tag name="im:aspect:Function" objectIdentifier="org.intermine.model.bio.GOTerm" type="class">
   </tag>
-  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.Gene" type="class">
+  <tag name="im:aspect:Genes" objectIdentifier="org.intermine.model.bio.Gene" type="class">
   </tag>
   <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.NcRNA" type="class">
   </tag>
@@ -135,7 +135,7 @@
   </tag>
   <tag name="im:aspect:Proteins" objectIdentifier="CDS.polypeptides" type="collection">
   </tag>
-  <tag name="im:aspect:Proteins" objectIdentifier="org.intermine.model.bio.ProteinInteraction" type="class">
+  <tag name="im:aspect:Interactions" objectIdentifier="org.intermine.model.bio.ProteinInteraction" type="class">
   </tag>
   <tag name="im:aspect:Proteins" objectIdentifier="CDS.protein" type="reference">
   </tag>
